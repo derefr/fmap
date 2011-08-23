@@ -44,7 +44,9 @@ You can add `fmap` support to your own data structures in three ways:
 
 2. You can include the module `Object::Composite` in your class. For each object of this type, a shallow clone will be made of it; then each instance variable set on the instance will be read, `fmap`ped itself, yielded, and then overwritten with the yielded value. This is very likely inefficient in most implementations.
 
-3. You can define your own `#fmap` and `#functor?` methods. (`Object#afmap` and `Object#eqfmap` are both defined in terms of `Object#fmap`.) An `#fmap`-supporting class looks like this:
+3. You can define your own `#fmap` and `#functor?` methods. (`Object#afmap` and `Object#eqfmap` are both defined in terms of `Object#fmap`.)
+
+An `#fmap`-supporting class looks like this:
 
     class Foo
       def initialize(a, b)
